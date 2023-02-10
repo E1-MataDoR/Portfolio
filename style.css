@@ -37,22 +37,89 @@ header{
      font-size: 1.3em;
 }
 
+.span3{
+     color: #74e007;
+     font-weight: 700;
+     font-size: 1.3em;
+}
+
 .navigation a{
      color:#960d2d;
      font-weight: 700;
      font-size: 1.2em;
      text-decoration: none;
      padding-left: 15px;
+     transition: 0.7s ease;
 }
 
 .navigation a:hover{
      color:rgb(116, 224, 7);
-     transition: 0.7s ease;
+     transform: scale(1.1);
 }
 
 section{
      padding: 100px 50px 100px 100px;
 }
+
+.balls {
+     width: 4em;
+     display: flex;
+     flex-flow: row nowrap;
+     align-items: center;
+     justify-content: space-between;
+     margin-left: 300px;
+   }
+   
+   .balls div {
+     width:  0.8em;
+     height: 0.8em;
+     border-radius: 50%;
+     background-color: #960d2d;
+   }
+   
+   .balls div:nth-of-type(1) {
+     transform: translateX(-100%);
+     animation: left-swing 0.5s ease-in alternate infinite;
+   }
+   
+   .balls div:nth-of-type(3) {
+     transform: translateX(-95%);
+     animation: right-swing 0.5s ease-out alternate infinite;
+   }
+   
+   @keyframes left-swing {
+     0%{
+          background-color: #74e007;
+     }
+     50%
+     {
+          transform: translateX(95%);
+     }
+     75%{
+          transform: translateX(95%);
+          background-color: #960d2d;
+     }
+     100% {
+       transform: translateX(100%);
+     
+   }
+
+}
+   
+   @keyframes right-swing {
+     50% {
+       transform: translateX(-95%);
+       background-color: #960d2d;
+     }
+     75%{
+          
+          background-color: #74e007;
+     }
+     100% {
+       transform: translateX(100%);
+       background-color: #74e007;
+     }
+   }
 
 .main{
      width: 100%;
